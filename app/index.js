@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, Image, Pressable, StyleSheet, ImageBackground } from 'react-native';
+import { Text, View, Image, Pressable, StyleSheet, ImageBackground, TouchableOpacity } from 'react-native';
 import { Link } from 'expo-router';
 import Icon from 'react-native-vector-icons/FontAwesome'; // Importar o conjunto de ícones desejado  
 
@@ -8,16 +8,33 @@ export default function Index() {
     <ImageBackground source={require('../assets/images/Disco-2.png')} style={styles.background}>
       <View style={styles.container}>
         <Text style={styles.headerText}>Record Store</Text>
-        {/* <Image
-          style={styles.image}
-          source={require('../assets/images/Disco-1.png')}
-        /> */}
-        {/* <Text style={styles.subHeaderText}>Rock and Row</Text> */}
+
         <Link href="../products" style={styles.button} asChild>
-          <Pressable accessibilityLabel="Acessar record store" style={styles.buttonContent}>
-            <Icon name="music" size={30} /> {/* Adicionando o ícone */}
+          <Pressable accessibilityLabel="Acessar record store" style={styles.button}>
+            <Icon name="music" size={25} /> {/* Adicionando o ícone */}
             <Text style={styles.buttonText}>Acessar record store</Text>
           </Pressable>
+        </Link>
+
+        <Link href="/about2" style={styles.button} asChild>
+          <TouchableOpacity>
+            <Icon name="music" size={25}/>
+            <Text style={styles.buttonText}>Sobre Nos</Text>
+          </TouchableOpacity>
+        </Link>
+
+
+        <Link href="/about3" style={styles.button} asChild>
+          <TouchableOpacity>
+            <Icon name="music" size={25}/>
+            <Text style={styles.buttonText}>Musicas</Text>
+          </TouchableOpacity>
+        </Link>
+        <Link href="/flex" style={styles.button} asChild>
+          <TouchableOpacity>
+            <Icon name="music" size={25}/>
+            <Text style={styles.buttonText}>festivais</Text>
+          </TouchableOpacity>
         </Link>
       </View>
     </ImageBackground>
@@ -25,10 +42,10 @@ export default function Index() {
 }
 
 const COLORS = {
-  background: '#0D1C26',
+  background: '#DEDEE3',
   text: '#fff',
-  buttonBackground: '#1B1B1C',
-  buttonText: '#DEDEE3',
+  buttonBackground: '#DEDEE3',
+  buttonText: '#1B1B1C',
 };
 
 const SIZES = {
@@ -55,9 +72,9 @@ const styles = StyleSheet.create({
     marginTop: 20,
     color: COLORS.text,
     fontSize: SIZES.fontSize,
-    backgroundColor: 'rgba(0, 0, 0, 0.5)', 
-    padding: 10, 
-    borderRadius:5,
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    padding: 10,
+    borderRadius: 5,
     fontFamily: 'custom-font',
   },
   image: {
@@ -72,21 +89,19 @@ const styles = StyleSheet.create({
     fontSize: SIZES.fontSize,
   },
   button: {
-    position: 'absolute',
+    // position: 'absolute',
     bottom: 0,
-    left: 0,
-    right: 0,
+    width: '100%',
     margin: 20,
     backgroundColor: COLORS.buttonBackground,
     alignItems: 'center',
     justifyContent: 'center',
     paddingVertical: SIZES.paddingVertical,
     borderRadius: 15,
-  },
-  buttonContent: {
     flexDirection: 'row',
     alignItems: 'center',
   },
+ 
   buttonText: {
     fontSize: SIZES.buttonFontSize,
     color: COLORS.buttonText,

@@ -27,7 +27,9 @@ export default function RootLayout() {
     >
       {/* <Stack.Screen name="index" options={{ headerShown: false }} /> */}
       <Stack.Screen name="index" options={{ title: "RS" }} />
-      <Stack.Screen name="products" options={{ title: "Menu WP" }} />
+      <Stack.Screen name="products" options={{ title: "Menu" }} />
+      <Stack.Screen name="about2.js" options={{ title: "Menu" }} />
+      <Stack.Screen name="flex.js" options={{ title: "bandas" }} />
     </Stack>
    
   );

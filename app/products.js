@@ -15,7 +15,7 @@ export default function Products() {
                 <Link
                     key={item.id}
                     href={{
-                        pathname: "/coffeesingle/[id]",
+                        pathname: "/Rocksingle/[id]",
                         params: { id: item.id }
                     }}>
                     <View style={styles.itemContainer}>

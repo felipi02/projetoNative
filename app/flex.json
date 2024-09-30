@@ -4,31 +4,31 @@
             "id": 1,
             "title": "Festival da 9",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fermentum ex urna, vitae lacinia nibh lacinia id. Praesent fringilla eros gravida sodales faucibus. Etiam rhoncus purus nec diam eleifend condimentum. Curabitur feugiat lacinia orci ut luctus. Cras rhoncus nibh vitae dui pellentesque, vel finibus ipsum eleifend. Integer egestas hendrerit blandit.",
-            "image": "../assets/images/festivais.jpg"
+            "image": "festivais"
         },
         {
             "id": 2,
             "title": "Festival do Rock",
             "description": "Aenean pretium, lectus non commodo feugiat, ligula neque feugiat turpis, vitae scelerisque felis felis consequat urna. Fusce commodo eget ex eget congue. Suspendisse fermentum dui et fermentum ultricies. Cras interdum augue magna, nec vestibulum nibh ornare vitae. Etiam vel scelerisque tellus. Nunc tincidunt tortor ac volutpat facilisis. Vestibulum ut erat quis.",
-            "image": "../assets/images/festivais1.jpg"
+            "image": "festivais1"
         },
         {
             "id": 3,
             "title": "Festival Rock and CRAZY",
             "description": "Aliquam vulputate volutpat turpis, quis aliquam massa blandit vitae. Vivamus sed efficitur urna, sit amet aliquet urna. Nullam vel mattis lacus, eleifend tristique sem. Donec at nunc turpis. Integer venenatis tincidunt lacinia. Integer quis porttitor purus. Donec vel sodales ante, sit amet tincidunt ante.lorem impsu.",
-            "image": "../assets/images/festivais2.jpg"
+            "image": "festivais2"
         },
         {
             "id": 4,
             "title": "Festival Nirvana",
             "description": "Phasellus in sodales lorem, in volutpat nisl. Morbi ac libero eget sem fermentum lobortis. Aliquam nec est molestie, dictum purus ut, faucibus ligula. Nam et nulla malesuada, venenatis mauris non, sodales velit. Vestibulum venenatis tellus id nulla fringilla, sit amet pellentesque elit tempus. Aenean metus nisi, blandit at scelerisque a, efficitur nec urna. Mauris tristique ultricies placerat.",
-            "image": "../assets/images/festivais3.jpg"
+            "image": "festivais3"
         },
         {
             "id": 5,
             "title": "Festival do loco",
             "description": "Vestibulum non ante consectetur, venenatis felis quis, condimentum dui. Vivamus vel ex ut erat blandit consequat at nec neque. Sed ullamcorper libero at felis tempor condimentum. Nunc egestas eros sit amet dui aliquam, vel commodo mauris lacinia. Mauris mattis lectus ligula, vitae egestas massa posuere id. Vestibulum interdum nulla nec eros finibus euismod. Pellentesque id dui dui.",
-            "image": "../assets/images/festivais4.jpg"
+            "image": "festivais4"
         }
     
     

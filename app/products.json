@@ -3,38 +3,38 @@
         {
             "id": 1,
             "title": "Iron Maiden",
-            "description": "Iron Maiden é uma das bandas mais icônicas e influentes do heavy metal, formada em 1975 em Londres, Reino Unido, pelo baixista Steve Harris. ",
-            "image": "../assets/images/music-1.jpg"
+            "description": "Iron Maiden é uma das bandas mais icônicas e influentes do heavy metal, formada em 1975 em Londres, Reino Unido, pelo baixista Steve Harris.",
+            "image": "music-1"
         },
         {
             "id": 2,
             "title": "AC/DC",
-            "description": " AC/DC é uma banda de rock formada em 1973 em Sydney, Austrália, pelos irmãos Malcolm e Angus Young. ",
-            "image": "../assets/images/music-2.jpg"
+            "description": "AC/DC é uma banda de rock formada em 1973 em Sydney, Austrália, pelos irmãos Malcolm e Angus Young.",
+            "image": "music-2"
         },
         {
             "id": 3,
             "title": "Nirvana",
-            "description": "Nirvana foi uma banda de rock formada em 1987 em Aberdeen, Washington, Estados Unidos, por Kurt Cobain (vocalista e guitarrista) e Krist Novoselic (baixista). Mais tarde, Dave Grohl (baterista) se juntou ao grupo. ",
-            "image": "../assets/images/music-3.jpg"
+            "description": "Nirvana foi uma banda de rock formada em 1987 em Aberdeen, Washington, Estados Unidos, por Kurt Cobain (vocalista e guitarrista) e Krist Novoselic (baixista).",
+            "image": "music-3"
         },
         {
             "id": 4,
-            "title": "the Beatles",
-            "description": "The Beatles foi uma banda de rock britânica formada em Liverpool em 1960, Seus membros principais eram John Lennon (vocalista e guitarrista), Paul McCartney (vocalista e baixista), George Harrison (guitarrista) e Ringo Starr (baterista). ",
-            "image": "../assets/images/music-4.jpg"
+            "title": "The Beatles",
+            "description": "The Beatles foi uma banda de rock britânica formada em Liverpool em 1960. Seus membros principais eram John Lennon, Paul McCartney, George Harrison e Ringo Starr.",
+            "image": "music-4"
         },
         {
             "id": 5,
-            "title": "Kizz",
-            "description": "Kiss é uma banda de rock americana formada em Nova York em 1973, A banda foi fundada por Paul Stanley (vocal e guitarra rítmica) e Gene Simmons (vocal e baixo).",
-            "image": "../assets/images/music-5.jpg"
+            "title": "Kiss",
+            "description": "Kiss é uma banda de rock americana formada em Nova York em 1973, por Paul Stanley e Gene Simmons.",
+            "image": "music-5"
         },
         {
             "id": 6,
-            "title": "Guns N Roses",
-            "description": "Guns N' Roses é uma banda de rock americana formada em Los Angeles, Califórnia, em 1985.Axl Rose (vocalista), Slash (guitarrista solo), Izzy Stradlin (guitarrista rítmico), Duff McKagan (baixista) e Steven Adler (baterista).",
-            "image": "../assets/images/music-6.jpg"
+            "title": "Guns N' Roses",
+            "description": "Guns N' Roses é uma banda de rock americana formada em Los Angeles, Califórnia, em 1985.",
+            "image": "music-6"
         }
     ]
 }

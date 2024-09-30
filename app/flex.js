@@ -2,6 +2,15 @@ import { Text, ScrollView, View, Image } from "react-native";
 import { Link } from "expo-router";
 import list from './flex.json';
 
+const images = {
+    "festivais.jpg": require('../assets/images/festivais.jpg'),
+    "festivais1.jpg": require('../assets/images/festivais1.jpg'),
+    "festivais2.jpg": require('../assets/images/festivais2.jpg'),
+    "festivais3.jpg": require('../assets/images/festivais3.jpg'),
+    "festivais4.jpg": require('../assets/images/festivais4.jpg'),
+    
+  };
+  console.log('Dados do JSON:', list.listProduct);
 export default function FlexList() {
     return (
         <ScrollView style={{ flex: 1, padding: 20, backgroundColor: '#1B1B1C' }}>
@@ -24,7 +33,6 @@ export default function FlexList() {
                         params: { id: item.id }
                     }}>
                     <View style={{
-                        flexDirection: 'row',
                         marginBottom: 20,
                         backgroundColor: '#DEDEE3',
                         borderRadius: 8,

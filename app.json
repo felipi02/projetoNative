@@ -1,4 +1,5 @@
 {
+  
   "expo": {
     "name": "projetoNative",
     "slug": "projetoNative",
@@ -13,9 +14,17 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSMicrophoneUsageDescription": "Este aplicativo precisa de acesso ao microfone.",
+        "NSAppleMusicUsageDescription": "Este aplicativo precisa acessar a biblioteca de músicas."
+      }
     },
     "android": {
+      "permissions": [
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE"
+      ],
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
@@ -35,3 +44,4 @@
     }
   }
 }
+

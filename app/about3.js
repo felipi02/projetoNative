@@ -1,22 +1,36 @@
 import React, { useState, useEffect } from 'react';
-import { View, Button, StyleSheet, FlatList, Text, TouchableOpacity, Image } from 'react-native';
+import { View, StyleSheet, FlatList, Text, TouchableOpacity, Image } from 'react-native';
 import { Audio } from 'expo-av';
 
 const songs = [
   { id: '1', title: 'Kiss', file: require('../assets/sound/Kiss.mp3'), image: require('../assets/images/music-5.jpg') },
   { id: '2', title: 'ACDC', file: require('../assets/sound/ACDC.mp3'), image: require('../assets/images/music-2.jpg') },
-  
 ];
 
 export default function MusicPlayer() {
-  const [sound, setSound] = useState();
+  const [sound, setSound] = useState(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentSong, setCurrentSong] = useState(null);
 
+  // Configuração de áudio
+  useEffect(() => {
+    (async () => {
+      await Audio.setAudioModeAsync({
+        allowsRecordingIOS: false,
+        interruptionModeIOS: Audio.INTERRUPTION_MODE_IOS_MIX_WITH_OTHERS, // Corrigido
+        playsInSilentModeIOS: true,
+        shouldDuckAndroid: true,
+        interruptionModeAndroid: Audio.INTERRUPTION_MODE_ANDROID_DO_NOT_MIX,
+        playThroughEarpieceAndroid: false,
+      });
+    })();
+  }, []);
+
   const playSound = async (song) => {
     try {
+      // Para evitar que uma nova música toque sem parar a anterior
       if (sound) {
-        await sound.stopAsync();
+        await sound.unloadAsync(); // Libera o recurso de som anterior
       }
 
       const { sound: newSound } = await Audio.Sound.createAsync(song.file);
@@ -33,8 +47,10 @@ export default function MusicPlayer() {
     try {
       if (sound) {
         await sound.stopAsync();
+        await sound.unloadAsync(); // Libera os recursos de som após parar
         setIsPlaying(false);
         setCurrentSong(null);
+        setSound(null); // Reseta o som
       }
     } catch (error) {
       console.error('Erro ao parar música', error);
@@ -42,11 +58,11 @@ export default function MusicPlayer() {
   };
 
   useEffect(() => {
-    return sound
-      ? () => {
-          sound.unloadAsync();
-        }
-      : undefined;
+    return () => {
+      if (sound) {
+        sound.unloadAsync(); // Limpa o som ao desmontar o componente
+      }
+    };
   }, [sound]);
 
   const renderSongItem = ({ item }) => (

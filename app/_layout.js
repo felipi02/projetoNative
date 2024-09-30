@@ -1,19 +1,9 @@
 import { Stack } from "expo-router";
 
-
-//export default function RootLayout() {
-  //return (
-    //<Stack>
-     // <Stack.Screen name="index" />
- //  </Stack>
- // );
-//}
-
 export default function RootLayout() {
   return (
    
-    <Stack
-    
+    <Stack    
       screenOptions={{
         headerStyle: {
           backgroundColor: "#010101",
@@ -26,10 +16,11 @@ export default function RootLayout() {
       }}
     >
       {/* <Stack.Screen name="index" options={{ headerShown: false }} /> */}
-      <Stack.Screen name="index" options={{ title: "RS" }} />
-      <Stack.Screen name="products" options={{ title: "Menu" }} />
-      <Stack.Screen name="about2.js" options={{ title: "Menu" }} />
-      <Stack.Screen name="flex.js" options={{ title: "bandas" }} />
+      <Stack.Screen name="index" options={{ title: "Record Store" }} />
+      <Stack.Screen name="products" options={{ title: "bandas" }} />
+      <Stack.Screen name="about2" options={{ title: "Sobre nos" }} />
+      <Stack.Screen name="flex" options={{ title: "festivais" }} />
+      <Stack.Screen name="about3" options={{ title: "musicas" }} />
     </Stack>
    
   );

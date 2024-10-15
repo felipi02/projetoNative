@@ -2,37 +2,44 @@ import React, { useState, useEffect } from 'react';
 import { View, StyleSheet, FlatList, Text, TouchableOpacity, Image } from 'react-native';
 import { Audio } from 'expo-av';
 
-const songs = [
-  { id: '1', title: 'Kiss', file: require('../assets/sound/Kiss.mp3'), image: require('../assets/images/music-5.jpg') },
-  { id: '2', title: 'ACDC', file: require('../assets/sound/ACDC.mp3'), image: require('../assets/images/music-2.jpg') },
+const playlists = [
+  {
+    singer: 'Kiss',
+    songs: [
+      { id: '1', title: 'Kiss Song 1', file: require('../assets/sound/Kiss.mp3'), image: require('../assets/images/music-5.jpg') },
+      { id: '2', title: 'Kiss Song 2', file: require('../assets/sound/Kiss2.mp3'), image: require('../assets/images/music-5.jpg') },
+      { id: '3', title: 'Kiss Song 3', file: require('../assets/sound/Kiss3.mp3'), image: require('../assets/images/music-5.jpg') }
+    ]
+  },
+  {
+    singer: 'ACDC',
+    songs: [
+      { id: '1', title: 'ACDC Song 1', file: require('../assets/sound/ACDC.mp3'), image: require('../assets/images/music-2.jpg') },
+      { id: '2', title: 'ACDC Song 2', file: require('../assets/sound/ACDC2.mp3'), image: require('../assets/images/music-2.jpg') },
+      { id: '3', title: 'ACDC Song 3', file: require('../assets/sound/ACDC3.mp3'), image: require('../assets/images/music-2.jpg') }
+    ]
+  },
+  {
+    singer: 'Nirvana',
+    songs: [
+      { id: '1', title: 'Nirvana Song 1', file: require('../assets/sound/Nirvana.mp3'), image: require('../assets/images/music-3.jpg') },
+      { id: '2', title: 'Nirvana Song 2', file: require('../assets/sound/Nirvana2.mp3'), image: require('../assets/images/music-3.jpg') },
+      { id: '3', title: 'Nirvana Song 3', file: require('../assets/sound/Nirvana3.mp3'), image: require('../assets/images/music-3.jpg') }
+    ]
+  }
 ];
 
 export default function MusicPlayer() {
   const [sound, setSound] = useState(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentSong, setCurrentSong] = useState(null);
-
-  // Configuração de áudio
-  useEffect(() => {
-    (async () => {
-      await Audio.setAudioModeAsync({
-        allowsRecordingIOS: false,
-        interruptionModeIOS: Audio.INTERRUPTION_MODE_IOS_MIX_WITH_OTHERS, // Corrigido
-        playsInSilentModeIOS: true,
-        shouldDuckAndroid: true,
-        interruptionModeAndroid: Audio.INTERRUPTION_MODE_ANDROID_DO_NOT_MIX,
-        playThroughEarpieceAndroid: false,
-      });
-    })();
-  }, []);
+  const [selectedPlaylist, setSelectedPlaylist] = useState(null);
 
   const playSound = async (song) => {
     try {
-      // Para evitar que uma nova música toque sem parar a anterior
       if (sound) {
-        await sound.unloadAsync(); // Libera o recurso de som anterior
+        await sound.unloadAsync();
       }
-
       const { sound: newSound } = await Audio.Sound.createAsync(song.file);
       setSound(newSound);
       setCurrentSong(song);
@@ -47,10 +54,10 @@ export default function MusicPlayer() {
     try {
       if (sound) {
         await sound.stopAsync();
-        await sound.unloadAsync(); // Libera os recursos de som após parar
+        await sound.unloadAsync();
         setIsPlaying(false);
         setCurrentSong(null);
-        setSound(null); // Reseta o som
+        setSound(null);
       }
     } catch (error) {
       console.error('Erro ao parar música', error);
@@ -60,7 +67,7 @@ export default function MusicPlayer() {
   useEffect(() => {
     return () => {
       if (sound) {
-        sound.unloadAsync(); // Limpa o som ao desmontar o componente
+        sound.unloadAsync();
       }
     };
   }, [sound]);
@@ -80,13 +87,32 @@ export default function MusicPlayer() {
     </View>
   );
 
+  const renderPlaylistItem = ({ item }) => (
+    <TouchableOpacity onPress={() => setSelectedPlaylist(item.songs)} style={styles.playlistButton}>
+      <Text style={styles.playlistText}>{item.singer}</Text>
+    </TouchableOpacity>
+  );
+
   return (
     <View style={styles.container}>
-      <FlatList
-        data={songs}
-        renderItem={renderSongItem}
-        keyExtractor={item => item.id}
-      />
+      {selectedPlaylist ? (
+        <>
+          <TouchableOpacity onPress={() => setSelectedPlaylist(null)} style={styles.backButton}>
+            <Text style={styles.backButtonText}>Voltar</Text>
+          </TouchableOpacity>
+          <FlatList
+            data={selectedPlaylist}
+            renderItem={renderSongItem}
+            keyExtractor={item => item.id}
+          />
+        </>
+      ) : (
+        <FlatList
+          data={playlists}
+          renderItem={renderPlaylistItem}
+          keyExtractor={item => item.singer}
+        />
+      )}
     </View>
   );
 }
@@ -136,5 +162,26 @@ const styles = StyleSheet.create({
   buttonText: {
     color: '#fff',
     fontWeight: 'bold',
+  },
+  playlistButton: {
+    padding: 20,
+    backgroundColor: '#444',
+    borderRadius: 10,
+    marginBottom: 10,
+  },
+  playlistText: {
+    color: '#fff',
+    fontSize: 18,
+  },
+  backButton: {
+    padding: 10,
+    backgroundColor: '#555',
+    marginBottom: 10,
+    borderRadius: 5,
+    alignItems: 'center',
+  },
+  backButtonText: {
+    color: '#fff',
+    fontSize: 16,
   },
 });

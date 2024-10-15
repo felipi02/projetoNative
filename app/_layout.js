@@ -21,6 +21,7 @@ export default function RootLayout() {
       <Stack.Screen name="about2" options={{ title: "Sobre nos" }} />
       <Stack.Screen name="flex" options={{ title: "festivais" }} />
       <Stack.Screen name="about3" options={{ title: "musicas" }} />
+      <Stack.Screen name="cadastro" options={{ title: "cadastre-se aqui" }} />
     </Stack>
    
   );

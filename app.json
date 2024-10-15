@@ -1,5 +1,4 @@
 {
-  
   "expo": {
     "name": "projetoNative",
     "slug": "projetoNative",
@@ -18,7 +17,8 @@
       "infoPlist": {
         "NSMicrophoneUsageDescription": "Este aplicativo precisa de acesso ao microfone.",
         "NSAppleMusicUsageDescription": "Este aplicativo precisa acessar a biblioteca de músicas."
-      }
+      },
+      "bundleIdentifier": "com.felipiao.projetoNative"
     },
     "android": {
       "permissions": [
@@ -28,7 +28,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.felipiao.projetoNative"
     },
     "web": {
       "bundler": "metro",
@@ -41,7 +42,11 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "eas": {
+        "projectId": "2f7969d9-3b81-4cd3-89b4-7180b633b25f"
+      }
     }
   }
 }
-

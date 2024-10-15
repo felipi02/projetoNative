@@ -3,11 +3,11 @@ import { Link } from "expo-router";
 import list from './flex.json';
 
 const images = {
-    "festivais.jpg": require('../assets/images/festivais.jpg'),
-    "festivais1.jpg": require('../assets/images/festivais1.jpg'),
-    "festivais2.jpg": require('../assets/images/festivais2.jpg'),
-    "festivais3.jpg": require('../assets/images/festivais3.jpg'),
-    "festivais4.jpg": require('../assets/images/festivais4.jpg'),
+    "festivais": require('../assets/images/festivais.jpg'),
+    "festivais1": require('../assets/images/festivais1.jpg'),
+    "festivais2": require('../assets/images/festivais2.jpg'),
+    "festivais3": require('../assets/images/festivais3.jpg'),
+    "festivais4": require('../assets/images/festivais4.jpg'),
     
   };
   console.log('Dados do JSON:', list.listProduct);
@@ -39,7 +39,7 @@ export default function FlexList() {
                         padding: 10,
                     }}>
                         <Image 
-                            source={{ uri: item.image }} 
+                            source={images [item.image] } 
                             style={{ 
                                 width: 100, 
                                 height: 100, 

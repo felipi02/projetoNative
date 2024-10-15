@@ -17,7 +17,7 @@ console.log('Dados do JSON:', list.listProduct);
 export default function Products() {
 
     return (
-        <ScrollView style={styles.container}>
+        <ScrollView style={styles.container}> 
             <Text style={styles.title}>
                 Os melhores do Rock
             </Text>
